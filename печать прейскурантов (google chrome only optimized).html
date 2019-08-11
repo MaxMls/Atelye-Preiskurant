@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Печать прейскурантов</title>
+	<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.prints > div, .templateContainer > div{
+	position: relative;
+}
+.panel{
+	padding: 20px;
+	background: lime;
+	margin:10px;
+}
+.panel div{
+	margin:6px;
+}
+.prints{
+	display: none;
+}
+
+@media print {
+
+	.panel, .templateContainer{
+		display: none;
+	}
+
+	.prints{
+		display: block;
+	}
+
+	@page{
+        size: landscape;   /* auto is the initial value */
+        padding: 0;
+        margin: 0;
+    }
+
+}
+.prints > div{
+	page-break-after: always;
+	transform-origin: top left;
+	transform: scale(1.9);
+}
+    
+    
+</style>
+<link href="a3741a4c-bc02-11e9-9d71-0cc47a792c0a_id_a3741a4c-bc02-11e9-9d71-0cc47a792c0a_files/preiskurant_style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="panel">
+		<div>
+			Начать с номера: <input id="startNumber" type="number" name="" value="7713881" placeholder="">
+		</div>
+		<div>
+			Количество квитанций: <input id="pageCount" type="number" name="" value="2" min="1" placeholder="">
+		</div>
+		<div>
+			Последняя квитанция будет с номером: <span style="font-weight: bold;" id="lastNumber"></span>
+		</div>
+		<div>
+			Телефон (+1 234 567-89-00): <input id="phoneNumber" type="text" name="" value="" min="1" placeholder="">
+		</div>
+		<button id="startButton" style="padding: 7px; background: white; color: red; font-weight: bold; font-size: 30pt;">Печатать!!!</button>
+	</div>
+	
+	<div class="templateContainer">
+		<div>
+			<div style="left:50%;margin-left:-421px;top:0px;width:842px;height:595px;overflow:hidden">
+			<div style="position:absolute;left:0px;top:0px">
+			<img src="a3741a4c-bc02-11e9-9d71-0cc47a792c0a_id_a3741a4c-bc02-11e9-9d71-0cc47a792c0a_files/background01.jpg" width=842 height=595></div>
+			<div style="position:absolute;left:70.91px;top:34.44px" class="cls_003"><span class="cls_003">КВИТАНЦИЯ № <span class="number">7713881</span> от «_____»__________2019г.</span></div>
+			<div style="position:absolute;left:503.09px;top:12.38px" class="cls_003"><span class="cls_003">Телефон исполнителя: <span class="phoneSpan">(не указан)</span></span></div>
+			<div style="position:absolute;left:503.09px;top:34.38px" class="cls_003"><span class="cls_003">КОР. КВИТАНЦИИ № <span class="number">7713881</span> от «_____»__________2019г.</span></div>
+			<div style="position:absolute;left:72.11px;top:55.86px" class="cls_003"><span class="cls_003">Эскиз (или описание) изделия</span></div>
+			<div style="position:absolute;left:247.31px;top:55.74px" class="cls_002"><span class="cls_002">Заказчик_____________________________</span></div>
+			<div style="position:absolute;left:698.45px;top:55.80px" class="cls_003"><span class="cls_003">Стоимость</span></div>
+			<div style="position:absolute;left:529.79px;top:62.88px" class="cls_003"><span class="cls_003">Виды платежей</span></div>
+			<div style="position:absolute;left:247.31px;top:69.54px" class="cls_002"><span class="cls_002">Адрес _______________________________</span></div>
+			<div style="position:absolute;left:654.35px;top:71.76px" class="cls_006"><span class="cls_006">материал</span></div>
+			<div style="position:absolute;left:713.87px;top:71.76px" class="cls_006"><span class="cls_006">работа</span></div>
+			<div style="position:absolute;left:770.69px;top:71.76px" class="cls_006"><span class="cls_006">всего</span></div>
+			<div style="position:absolute;left:247.31px;top:83.34px" class="cls_002"><span class="cls_002">Телефон _____________________________</span></div>
+			<div style="position:absolute;left:503.09px;top:85.32px" class="cls_006"><span class="cls_006">При приеме заказа</span></div>
+			<div style="position:absolute;left:247.31px;top:97.14px" class="cls_002"><span class="cls_002">Код услуги ___________________________</span></div>
+			<div style="position:absolute;left:503.09px;top:100.02px" class="cls_006"><span class="cls_006">При выдаче заказа</span></div>
+			<div style="position:absolute;left:247.31px;top:110.94px" class="cls_002"><span class="cls_002">Изделие _____________________________</span></div>
+			<div style="position:absolute;left:503.09px;top:114.78px" class="cls_006"><span class="cls_006">Доплата за изменение по заказу</span></div>
+			<div style="position:absolute;left:247.31px;top:124.74px" class="cls_002"><span class="cls_002">Исполнитель _________________________</span></div>
+			<div style="position:absolute;left:503.09px;top:129.54px" class="cls_006"><span class="cls_006">Получено</span></div>
+			<div style="position:absolute;left:564.41px;top:129.54px" class="cls_006"><span class="cls_006">при выдаче заказа</span></div>
+			<div style="position:absolute;left:578.45px;top:144.30px" class="cls_006"><span class="cls_006">при приеме</span></div>
+			<div style="position:absolute;left:305.03px;top:152.46px" class="cls_003"><span class="cls_003">Материалы заказчика</span></div>
+			<div style="position:absolute;left:511.97px;top:151.38px" class="cls_003"><span class="cls_003">Итого</span></div>
+			<div style="position:absolute;left:578.63px;top:159.06px" class="cls_006"><span class="cls_006">при выдаче</span></div>
+			<div style="position:absolute;left:272.15px;top:166.92px" class="cls_002"><span class="cls_002">Вид</span></div>
+			<div style="position:absolute;left:332.09px;top:166.92px" class="cls_002"><span class="cls_002">Кол-во</span></div>
+			<div style="position:absolute;left:386.51px;top:166.92px" class="cls_002"><span class="cls_002">Цена</span></div>
+			<div style="position:absolute;left:431.63px;top:166.92px" class="cls_002"><span class="cls_002">Сумма</span></div>
+			<div style="position:absolute;left:562.91px;top:202.14px" class="cls_007"><span class="cls_007">получено при приеме заказа (сумма прописью)</span></div>
+			<div style="position:absolute;left:531.11px;top:227.04px" class="cls_006"><span class="cls_006">заказчик</span></div>
+			<div style="position:absolute;left:734.99px;top:227.04px" class="cls_006"><span class="cls_006">приёмщик</span></div>
+			<div style="position:absolute;left:380.09px;top:255.54px" class="cls_004"><span class="cls_004">ИТОГО</span></div>
+			<div style="position:absolute;left:553.07px;top:262.26px" class="cls_006"><span class="cls_006">получено при выдаче заказа (сумма прописью)</span></div>
+			<div style="position:absolute;left:307.49px;top:268.86px" class="cls_003"><span class="cls_003">Материалы ателье</span></div>
+			<div style="position:absolute;left:531.11px;top:288.36px" class="cls_006"><span class="cls_006">заказчик</span></div>
+			<div style="position:absolute;left:734.99px;top:288.36px" class="cls_006"><span class="cls_006">приёмщик</span></div>
+			<div style="position:absolute;left:535.13px;top:328.26px" class="cls_003"><span class="cls_003">Наименование работ и доплат</span></div>
+			<div style="position:absolute;left:745.37px;top:328.14px" class="cls_002"><span class="cls_002">Стоимость</span></div>
+			<div style="position:absolute;left:503.09px;top:343.44px" class="cls_005"><span class="cls_005">Цена пошива при минимальной сложности</span></div>
+			<div style="position:absolute;left:380.09px;top:357.36px" class="cls_004"><span class="cls_004">ИТОГО</span></div>
+			<div style="position:absolute;left:503.09px;top:359.16px" class="cls_005"><span class="cls_005">Усложняющие элементы</span></div>
+			<div style="position:absolute;left:247.31px;top:384.48px" class="cls_003"><span class="cls_003">«Кол-во и стоимость подтверждаю»:</span></div>
+			<div style="position:absolute;left:247.31px;top:398.16px" class="cls_002"><span class="cls_002">Заказчик ___________________________</span></div>
+			<div style="position:absolute;left:503.09px;top:406.44px" class="cls_005"><span class="cls_005">Надбавки (скидки)</span></div>
+			<div style="position:absolute;left:247.31px;top:412.08px" class="cls_003"><span class="cls_003">«Заказ и материалы принял»:</span></div>
+			<div style="position:absolute;left:247.31px;top:425.76px" class="cls_002"><span class="cls_002">Приёмщик _________________________</span></div>
+			<div style="position:absolute;left:70.91px;top:453.48px" class="cls_003"><span class="cls_003">«С заказчиком согласовано»</span></div>
+			<div style="position:absolute;left:247.31px;top:453.48px" class="cls_003"><span class="cls_003">Готовое изделие и остатки материала</span></div>
+			<div style="position:absolute;left:70.91px;top:467.28px" class="cls_005"><span class="cls_005">Заказчик______________________</span></div>
+			<div style="position:absolute;left:247.31px;top:467.28px" class="cls_003"><span class="cls_003">получил «_____» ______________ 200__ г.</span></div>
+			<div style="position:absolute;left:701.39px;top:469.44px" class="cls_003"><span class="cls_003">Всего</span></div>
+			<div style="position:absolute;left:247.31px;top:481.74px" class="cls_002"><span class="cls_002">Заказчик ____________________________</span></div>
+			<div style="position:absolute;left:70.91px;top:487.80px" class="cls_005"><span class="cls_005">Дата I примерки ______________</span></div>
+			<div style="position:absolute;left:503.09px;top:485.16px" class="cls_005"><span class="cls_005">Дополнительные изменения к заказу</span></div>
+			<div style="position:absolute;left:322.79px;top:495.60px" class="cls_005"><span class="cls_005">подпись заказчика</span></div>
+			<div style="position:absolute;left:70.91px;top:503.46px" class="cls_005"><span class="cls_005">Дата II примерки ______________</span></div>
+			<div style="position:absolute;left:70.91px;top:517.14px" class="cls_005"><span class="cls_005">Изготовление _________________</span></div>
+			<div style="position:absolute;left:597.11px;top:516.66px" class="cls_003"><span class="cls_003">Общая стоимость заказа</span></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="prints">
+		
+	</div>
+
+	<script type="text/javascript">
+		'use strict'
+		const startNumberEl = document.getElementById('startNumber');
+		const pageCountEl = document.getElementById('pageCount');
+		const startButtonEl = document.getElementById('startButton');
+		const template = document.getElementsByClassName('templateContainer')[0].firstElementChild;
+		const lastNumberEl = document.getElementById('lastNumber');
+		const prints = document.getElementsByClassName('prints')[0];
+		const phoneNumberEl = document.getElementById('phoneNumber');
+
+		let startNum = startNumberEl.value;
+		let count = pageCountEl.value;
+		let lastNum = 0;
+		updateLastNum()
+
+		pageCountEl.oninput  = function (e) {
+			pageCountEl.value =  safeNum(pageCountEl.value);
+			count = pageCountEl.value|0;
+			updateLastNum()
+		}
+
+		startNumberEl.oninput  = function (e) {
+			startNumberEl.value = safeNum(startNumberEl.value);
+			startNum = startNumberEl.value|0;
+
+			let spans = template.getElementsByClassName('number');
+			for (let el of spans) {
+				el.innerText = startNum
+			}
+			updateLastNum()
+		}
+
+		phoneNumberEl.oninput  = function (e) {
+			let spans = template.getElementsByClassName('phoneSpan');
+			for (let el of spans) {
+				el.innerText = phoneNumberEl.value
+			}
+		}
+
+		function updateLastNum(){
+			lastNum = ((startNum|0) + (count|0) - 1);
+			lastNumberEl.innerText = lastNum;
+		}
+
+		startButtonEl.onclick = function () {
+			prints.innerHTML = '';
+			
+
+			for (let i = startNum; i <= lastNum; i++) {
+
+				let temp = template.cloneNode(true);
+
+				let spans = temp.getElementsByClassName('number');
+				for (let el of spans) {
+					el.innerText = i
+				}
+				prints.append(temp)
+			}
+
+
+			setTimeout(window.print, 1000);
+		}
+
+
+		function safeNum(a){
+			return Math.min(999999999, Math.max(a, 1));
+		}
+	</script>
+</body>
+</html>
